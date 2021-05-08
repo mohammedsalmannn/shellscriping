@@ -1,0 +1,116 @@
+----------------------------------------------------------------------------------------------------------
+Probelm Name: write a program that prints true if a month is between march 20 to june 20
+----------------------------------------------------------------------------------------------------------
+Solution:
+
+	read -p "Enter the Date:" Date
+	read -p "Enter the Month:" month
+
+	if (( ($month <= 6 & $data <= 20) ))
+	then 
+		echo $month  $date "True"
+	elif (( ($month >= 3 & $month < 6) & ($data<31)
+	then
+		echo $month  $date "True"
+	else
+		echo "False"
+fi
+
+----------------------------------------------------------------------------------------------------------
+Probelm Name : Program to simulate a coin flip and print head and tail.
+----------------------------------------------------------------------------------------------------------
+head=1
+tail=0
+random=$((RANDOM%2))
+
+if [ $random -eq $head ]
+then 
+	echo "head"
+else
+	echo "tail"
+----------------------------------------------------------------------------------------------------------
+Probelm Name: Genarate the 5 Random 2 digit number and sort it..!!
+----------------------------------------------------------------------------------------------------------
+Solution :
+
+		IFS=' ' read -ra arr -p "Enter the numbers:"
+		sort -n <(printf "%s\n" "${arr[@]}")
+
+----------------------------------------------------------------------------------------------------------
+Probelm Name: To find a leap Year or not.
+----------------------------------------------------------------------------------------------------------
+
+Solution :
+
+		yy=0
+		isleap="false"
+
+		read -p "Enter the year:" yy
+
+		if [ $((yy %4)) -ne 0 ]
+		then
+			isleap="false"
+		elif [ $((yy % 100) -eq 0 ]
+		then
+			isleap="true"
+		else 
+			isleap="true"
+
+		fi
+
+if [ "$isleap"== "true ]
+then
+	echo $yy "is a leap year"
+else
+	echo $yy " is not leap year"
+fi
+
+
+
+
+----------------------------------------------------------------------------------------------------------
+Probelm Name  :	Use Random Function to get single Digit Number
+----------------------------------------------------------------------------------------------------------
+	#!/bin/bash
+
+		num= $((RANDOM%10))
+
+		echo $num
+
+----------------------------------------------------------------------------------------------------------	
+Probelm Name : User random to get DICE Number between 1 to 6
+----------------------------------------------------------------------------------------------------------
+
+#!/bin/bash
+
+	num=`echo $((RANDOM%5+1))`
+
+	echo $num
+
+----------------------------------------------------------------------------------------------------------
+Probelm Name : Add two random dice number and print the result
+----------------------------------------------------------------------------------------------------------
+#!/bin/bash 
+
+	Dice1= $((RANDOM%5+1))
+	Dice2= $((RANDOM%5+1))
+
+	Result=`expr $Dice1 + $Dice2`
+
+	echo $Result
+----------------------------------------------------------------------------------------------------------
+Probelm Name : Write the program that reads 5 Random 2 digit values, then find their sum and the average
+----------------------------------------------------------------------------------------------------------
+#!/bin/bash 
+
+	RANDOM=$$
+	sum=0
+	for i in `seq 5`
+	do
+		 genVal= $((RANDOM%99))
+		sum=$((sum + genVal));
+		avg=$((sum / 5));
+
+	done
+	echo "sum of generated value = $sum"
+	echo "Average of generated value = $avg"
